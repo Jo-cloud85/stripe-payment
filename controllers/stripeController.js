@@ -1,8 +1,7 @@
 import stripe from "stripe";
 
-const stripeInstance = stripe(process.env.STRIPE_KEY)
-
 const stripeController = async (req, res)=> {
+    const stripeInstance = stripe(process.env.STRIPE_KEY)
     const { purchase, total_amount, shipping_fee } = req.body;
 
     const calculateOrderAmount = () => {
